@@ -26,13 +26,15 @@ int check_exists() {
         if (fgets(input, sizeof(input), stdin) == NULL) {
             return 1;
         }
-        input[strcspn(input, "\n")] = '\0'; // replace newline with nullterm
+        input[strcspn(input, "\n")] = '\0'; // Remove trailing newline if 'return'
+
         char ovrwrtOption;
-        if (input[0] == '\n') {
+        if (input[0] == '\0') {
             ovrwrtOption = 'Y';
         } else {
             ovrwrtOption = toupper((unsigned char)input[0]);
         }
+
         switch (ovrwrtOption) {
             case 'Y': break;
             case 'N': return 1;
