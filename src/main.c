@@ -79,6 +79,6 @@ int main(int argc, char* argv[]) {
     readlnm(&C_STANDARD);
 
     gen_file();
-    freeall(2, &PROJECT_NAME, &SOURCE_FILE);
+    freeall(4, &PROJECT_NAME, &SOURCE_FILE, &MIN_CMAKE_VERSION, &C_STANDARD);
     return 0;
 }
